@@ -34,10 +34,7 @@ class PaperBook(Book):
             raise TypeError("Количество страниц в книге должно быть типа int")
         if pages <= 0:
             raise ValueError("Количество страниц в книге должно быть больше 0")
-        self.pages = pages
-
-    def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}. Количество страниц {self.pages}"
+        self._pages = pages
 
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, pages={self.pages!r})"
@@ -57,9 +54,7 @@ class AudioBook(Book):
             raise TypeError("Продолжительность книги должна быть типа float")
         if duration <= 0:
             raise ValueError("Продолжительность книги должна быть больше 0")
-
-    def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}. Продолжительность {self.duration}"
+        self._duration = duration
 
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, duration={self.duration!r})"
